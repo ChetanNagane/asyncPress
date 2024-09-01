@@ -1,6 +1,18 @@
 version: "3.9"
 
 services:
+  nginx:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./config/nginx/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - app-volume:/app
+    depends_on:
+      web:
+        condition: service_started
 
   web:
     environment:
@@ -8,9 +20,9 @@ services:
     build:
       context: .
     volumes:
-      - .:/app
-    ports:
-      - "8000:8000"
+      - app-volume:/app
+    expose:
+      - 8000
     command: >
       python manage.py runserver 0.0.0.0:8000
 
@@ -27,7 +39,10 @@ services:
     container_name: celery_worker
     command: celery -A asyncPress worker
     volumes:
-      - .:/app
+      - app-volume:/app
     depends_on:
       - web
       - redis
+
+volumes:
+  app-volume:

@@ -162,9 +162,10 @@ cython_debug/
 .DS_Store
 
 media/*
-static/
+static/*
 
 !media/.gitkeep
+!static/.gitkeep
 
 # CSV & pickle files
 *.csv
