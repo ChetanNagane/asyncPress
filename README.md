@@ -89,3 +89,5 @@ You can use `curl` to make a request to this endpoint. Here is an example:
 ```bash
 curl -X GET http://localhost:8000/api/download_csv/your_request_id/ -o output.csv
 ```
+
+[Postman Collection](https://www.postman.com/lively-star-104294/workspace/my-workspace/collection/19463239-dc6aec2f-63a8-47c8-b031-b8aec64421d4?action=share&creator=19463239) 
