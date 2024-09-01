@@ -11,6 +11,8 @@ AsyncPress is a Django-based application designed to handle asynchronous image p
 - Database - SQLite
 - Server - Nginx
 
+Live version- [https://alternative-laure-persnol-5b52c7d9.koyeb.app/api/upload/](https://alternative-laure-persnol-5b52c7d9.koyeb.app/api/upload/)
+
 ## Running the Project Locally
 
 Follow these steps to run the project locally using Docker:
